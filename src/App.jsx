@@ -4,14 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import { Home } from "./components/Home";
 import { Articles } from "./components/ArticleList";
+import { SingleArticle } from "./components/SingleArticle";
 
 function App() {
   return (
     <main className="App">
       <Header />
-      <Articles />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
       </Routes>
     </main>
   );

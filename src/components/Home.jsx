@@ -5,7 +5,6 @@ import { Articles } from "./ArticleList";
 export const Home = () => {
   return (
     <main>
-      <h1>Welcome to nc News!</h1>
       <Articles />
     </main>
   );
