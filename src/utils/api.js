@@ -1,9 +1,11 @@
 import axios from "axios";
 
 const ncNewsApi = axios.create({
-    baseURL: ""
-})
+  baseURL: "https://nc-news-fgw1.onrender.com/api",
+});
 
-export function getArticles() {
-
-}
+export const getArticles = () => {
+  return ncNewsApi.get("/articles").then(({ data }) => {
+    return data.articles;
+  });
+};
