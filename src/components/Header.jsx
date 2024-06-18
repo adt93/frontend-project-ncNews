@@ -2,6 +2,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Home } from "./Home";
 
 export default function Header() {
   return (
@@ -12,7 +13,9 @@ export default function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="/" onClick={Home}>
+                Home
+              </Nav.Link>
               <NavDropdown title="Topics" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Coding</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Football</NavDropdown.Item>
