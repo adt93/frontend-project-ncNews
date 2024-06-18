@@ -1,17 +1,14 @@
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 
-export default function ArticleCard({
-  title,
-  topic,
-  author,
-  image,
-  body,
-  comments,
-}) {
+export const ArticleCard = ({ article }) => {
   return (
     <Card>
-      <Card.Body></Card.Body>
+      <Card.Body>
+        <Card.Text>{article.author}</Card.Text>
+        <Card.Title>{article.title}</Card.Title>
+        <Card.Text>{article.topic}</Card.Text>
+        <Card.Img src={article.article_img_url} />
+      </Card.Body>
     </Card>
   );
-}
+};

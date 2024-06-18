@@ -20,6 +20,11 @@ export default function Header() {
               </NavDropdown>
               <Nav.Link href="#link">Users</Nav.Link>
             </Nav>
+            <Nav>
+              <Nav.Link eventKey={2} href="#login">
+                Login
+              </Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
