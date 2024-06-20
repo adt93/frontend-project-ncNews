@@ -16,7 +16,8 @@ export const ArticleCard = ({ article }) => {
         <Card.Title>{article.title}</Card.Title>
         <Card.Text>{article.topic}</Card.Text>
         <Card.Img src={article.article_img_url} />
-        <Card.Text>{article.created_at}</Card.Text>
+        <Card.Text>Votes: {article.votes}</Card.Text>
+        <Card.Text>Comments: {article.comment_count}</Card.Text>
       </Card.Body>
       <Button onClick={handleClick}>Read more..</Button>
     </Card>

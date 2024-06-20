@@ -8,6 +8,7 @@ export const CommentCard = ({ comments }) => {
       <Card.Body>
         <Card.Text>{comments.body}</Card.Text>
         <Card.Text>{comments.author}</Card.Text>
+        <Card.Text>Votes: {comments.votes}</Card.Text>
       </Card.Body>
     </Card>
   );
