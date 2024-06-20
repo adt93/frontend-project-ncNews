@@ -10,7 +10,7 @@ export const Comments = ({ article_id }) => {
     getCommentsByArticleId(article_id).then((comments) => {
       setComments(comments);
     });
-  }, [article_id]);
+  }, [article_id, comments]);
 
   return (
     <section>

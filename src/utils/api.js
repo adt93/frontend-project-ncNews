@@ -29,3 +29,14 @@ export const patchArticleById = (article_id, newVotes) => {
       return data.article;
     });
 };
+export const postComment = (body, article_id, username) => {
+  const postBody = {
+    body: body,
+    username: "grumpy19",
+  };
+  return ncNewsApi
+    .post(`/articles/${article_id}/comments`, postBody)
+    .then(({ data }) => {
+      return data.comment;
+    });
+};

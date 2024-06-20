@@ -5,16 +5,19 @@ import Header from "./components/Header";
 import { Home } from "./components/Home";
 import { Articles } from "./components/ArticleList";
 import { SingleArticle } from "./components/SingleArticle";
+import { UserProvider } from "../context/user";
 
 function App() {
   return (
-    <main className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/articles/:article_id" element={<SingleArticle />} />
-      </Routes>
-    </main>
+    <UserProvider>
+      <main className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/articles/:article_id" element={<SingleArticle />} />
+        </Routes>
+      </main>
+    </UserProvider>
   );
 }
 export default App;
