@@ -1,5 +1,4 @@
 import { Card, Button } from "react-bootstrap";
-// import { ArticleComments } from "./ArticleComments";
 import { deleteComment } from "../utils/api";
 
 export const CommentCard = ({ comment, currentUser, onDelete }) => {

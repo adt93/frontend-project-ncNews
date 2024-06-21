@@ -34,7 +34,6 @@ export const SingleArticle = () => {
         <Card.Img src={article.article_img_url} alt={article.title} />
         <Card.Text>{article.body}</Card.Text>
         <Votes article_id={article_id} />
-        <AddComment article_id={article_id} />
         <ArticleComments article_id={article_id} currentUser={user} />
       </Card.Body>
     </Card>

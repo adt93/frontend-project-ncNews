@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 
-export const AddComment = ({ article_id }) => {
+export const AddComment = ({ article_id, onAddComment }) => {
   const { user } = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
   const [username, setUsername] = useState(user ? user.username : "");
@@ -17,13 +17,10 @@ export const AddComment = ({ article_id }) => {
 
     postComment(newComment, article_id, username)
       .then((newComment) => {
-        const setArticleComments = (currComments) => {
-          const newCommentList = [newComment, ...currComments];
-          return newCommentList;
-        };
         setNewComment("");
         setIsLoading(false);
         setError("");
+        onAddComment(newComment);
       })
       .catch((error) => {
         setError(error.message || "Failed to add comment.");
