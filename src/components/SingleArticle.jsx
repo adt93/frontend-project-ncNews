@@ -2,11 +2,10 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getArticlesById } from "../utils/api";
 import { Card } from "react-bootstrap";
-import { Comments } from "./ArticleComments";
+import { ArticleComments } from "./ArticleComments";
 import { Votes } from "./HandleVotes";
 import { AddComment } from "./AddComment";
 import { UserContext } from "../../context/user";
-import { UserProvider } from "../../context/user";
 
 export const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -36,7 +35,7 @@ export const SingleArticle = () => {
         <Card.Text>{article.body}</Card.Text>
         <Votes article_id={article_id} />
         <AddComment article_id={article_id} />
-        <Comments article_id={article_id} />
+        <ArticleComments article_id={article_id} currentUser={user} />
       </Card.Body>
     </Card>
   );

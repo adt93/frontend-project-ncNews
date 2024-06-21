@@ -1,9 +1,8 @@
 import { getCommentsByArticleId } from "../utils/api";
 import { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
 import { CommentCard } from "./CommentCard";
 
-export const Comments = ({ article_id }) => {
+export const ArticleComments = ({ article_id, currentUser }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -12,13 +11,22 @@ export const Comments = ({ article_id }) => {
     });
   }, [article_id, comments]);
 
+  const handleDeleteComment = (comment_id) => {
+    setComments((oldComments) =>
+      oldComments.filter((comment) => comment.comment_id !== comment_id)
+    );
+  };
+
   return (
-    <section>
-      <ul className="comments-list">
-        {comments.map((comment) => {
-          return <CommentCard key={comment.comment_id} comments={comment} />;
-        })}
-      </ul>
-    </section>
+    <div>
+      {comments.map((comment) => (
+        <CommentCard
+          key={comment.comment_id}
+          comment={comment}
+          currentUser={currentUser}
+          onDelete={handleDeleteComment}
+        />
+      ))}
+    </div>
   );
 };
